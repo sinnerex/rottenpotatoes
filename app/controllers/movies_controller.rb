@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
      @movies = Movie.all.sort_by &:title
     elsif params[:sort]=="created"
      #@movies = Movie.all.sort_by &:created_at
-     @movies = Movie.find :all, :order => "release_date DESC"
+     @movies = Movie.find :all, :order => "release_date ASC"
      @movies.each do |movie| 
       puts movie
      end     
