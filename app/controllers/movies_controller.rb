@@ -10,11 +10,7 @@ class MoviesController < ApplicationController
     if params[:sort]=="title"
      @movies = Movie.all.sort_by &:title
     elsif params[:sort]=="created"
-     #@movies = Movie.all.sort_by &:created_at
-     @movies = Movie.find :all, :order => "release_date ASC"
-     @movies.each do |movie| 
-      puts movie
-     end     
+     @movies = Movie.find :all, :order => "release_date ASC"    
     else
      @movies = Movie.all
     end
